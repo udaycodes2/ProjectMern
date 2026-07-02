@@ -51,7 +51,7 @@ const AllRooms = () => {
         '0 to 500',
         '500 to 1000',
         '1000 to 2000',
-        '2000 to 3000'
+        '2000 to 5000'
     ];
 
     const sortOptions = [
@@ -170,9 +170,9 @@ const AllRooms = () => {
       </div>
       
       {/* filters */}
-      <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>
+      <div className='bg-white w-80 border border-gray-300 text-gray-600 mb-8 lg:mb-0 lg:mt-16'>
 
-        <div className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${openFilters && "border-b"}`}>
+        <div className={`flex items-center justify-between px-5 py-2.5 border-b lg:border-b border-gray-300`}>
             <p className='text-base font-medium text-gray-800'>FILTERS</p>
             <div className='text-xs cursor-pointer'>
                 <span onClick={()=> setOpenFilters(!openFilters)}
