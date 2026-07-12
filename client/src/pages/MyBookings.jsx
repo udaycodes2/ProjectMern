@@ -7,7 +7,7 @@ import toast from 'react-hot-toast'
 const MyBookings = () => {
 
     // Getting data from context
-    const { axios, getToken, user } = useAppContext()
+    const { axios, getToken, user , currency } = useAppContext()
 
     // State variables
     const [bookings, setBookings] = useState([]);
@@ -83,7 +83,7 @@ const MyBookings = () => {
                             <img src={assets.guestsIcon} alt="guests-icon"/>
                             <span>Guests: {booking.guests}</span>
                         </div>
-                        <p className='text-base'>Total: ${booking.totalPrice}</p>
+                        <p className='text-base'>Total: {currency}{booking.totalPrice}</p>
                     </div>
                 </div>
 
