@@ -13,8 +13,8 @@ This project is ideal for:
 
 - Scalable project structure reference
 
-🔗 **Live Demo (Frontend):** https://quickstay-dun-xi.vercel.app/  
-🔗 **Backend API (Live):** https://hotel-booking-backend-ashen-eight.vercel.app/
+🔗 **Live Demo (Frontend):** [https://quickstay-dun-xi.vercel.app/  ](https://project-mern-indol.vercel.app/)
+🔗 **Backend API (Live):** [https://hotel-booking-backend-ashen-eight.vercel.app/](https://hotelmanagementbackend.vercel.app/)
 
 ---
 
