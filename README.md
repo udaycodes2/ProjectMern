@@ -1,23 +1,19 @@
 # 🌐 QuickStay – Full Stack Hotel Booking Platform  
-QuickStay is a production-ready full-stack hotel booking system that enables users to explore rooms, check real-time availability, complete bookings with **Stripe**, and manage reservations.
-
+QuickStay is a full-stack hotel booking system that enables users to explore rooms, check real-time availability, and complete bookings via **Pay At Hotel**, with online payments (Razorpay) planned as a future enhancement.
+ 
 Admins/Owners can add hotels, manage rooms, track bookings, view revenue analytics, and monitor customer activity.
-
+ 
 This project is ideal for:
-
+ 
 - Portfolio demonstration
-
 - Real-world **MERN** application learning
-
-- Authentication + Payments + Cloud Storage example
-
+- Authentication + Webhooks + Cloud Storage example
 - Scalable project structure reference
-
-🔗 **Live Demo (Frontend):** [https://quickstay-dun-xi.vercel.app/  ](https://project-mern-indol.vercel.app/)
-🔗 **Backend API (Live):** [https://hotel-booking-backend-ashen-eight.vercel.app/](https://hotelmanagementbackend.vercel.app/)
-
+🔗 **Live Demo (Frontend):** [https://project-mern-indol.vercel.app/](https://project-mern-indol.vercel.app/)  
+🔗 **Backend API (Live):** [https://hotelmanagementbackend.vercel.app/](https://hotelmanagementbackend.vercel.app/)
+ 
 ---
-
+ 
 ## 📌 Table of Contents
 - [Project Overview](#project-overview)
 - [Features](#-features)
@@ -27,54 +23,48 @@ This project is ideal for:
 - [Environment Variables](#-environment-variables)
 - [Folder Structure](#-folder-structure)
 - [API Endpoints](#-api-endpoints)
-- [Payment Integrastion Details](#-payment-integration-details)
+- [Payment Details](#-payment-details)
 - [Installation & Setup](#installation--setup)
 - [Dashboard Overview](#-dashboard-overview)
 - [Future Enhancements / Roadmap](#-future-enhancements--roadmap)
 - [Contributing](#-contributing)
 - [Troubleshooting](#-troubleshooting)
 - [Author & Contact](#author--contact)
-
 ---
-
+ 
 ## Project Overview
-
-**QuickStay** is a full-stack hotel booking web application built with the **MERN stack**, designed to simulate real-world booking platforms with secure payments, role-based dashboards, and scalable architecture.
-
+ 
+**QuickStay** is a full-stack hotel booking web application built with the **MERN stack**, designed to simulate real-world booking platforms with role-based dashboards, webhook-driven data sync, and a scalable architecture.
+ 
 ---
-
-
+ 
 ## 🚀 Features
-
+ 
 ### 🧑‍💼 User Features
-
+ 
 - 🔐 **User Authentication (Clerk)**
 - 🏨 **Browse, search & filter hotels**
-- 🎯 **Advanced filters** (price, category, AC/Non-AC, capacity, availability)
+- 🎯 **Advanced filters** (room type, price range, sorting)
 - 📅 **Real-time room availability check**
-- 🛏️ **Instant booking system**
-- 💳 **Stripe payment integration**
+- 🛏️ **Instant booking system (Pay At Hotel)**
 - 📜 **Booking history** with statuses & details
-- 📧 **Email confirmation** on successful booking
+- 📧 **Email confirmation** on successful booking (best-effort — booking still succeeds even if email delivery fails)
 - 🖼 **Cloudinary-based image delivery**
-- 🚫 **Auto-hide deleted rooms from booking history** 
-
+- 🚫 **Auto-hide deleted rooms from booking history**
 ---
-
+ 
 ### 🏨 Owner/Admin Features
-
+ 
 - 🏢 **Register hotels & manage listings**
 - 🏘 **Add, edit & delete rooms**
 - 📊 **Analytics Dashboard** (total revenue & bookings)
 - 👤 **View all customer bookings**
-- 📤 **Cloudinary image uploads** 
+- 📤 **Cloudinary image uploads**
 - ⚠️ **Auto-hide deleted rooms app-wide**
-
-
 ---
-
+ 
 ## 🧰 Tech Stack
-
+ 
 ### **Frontend**
 - React.js  
 - Tailwind CSS  
@@ -82,20 +72,17 @@ This project is ideal for:
 - Axios  
 - React Router  
 - Clerk Authentication  
-
 ### **Backend**
 - Node.js  
 - Express.js  
 - MongoDB + Mongoose  
-- Stripe Payments  
 - Cloudinary (images)  
 - Multer (uploads)  
-- Nodemailer (emails)  
+- Nodemailer (emails, via Brevo SMTP)  
+- Svix (Clerk webhook signature verification)  
 - CORS  
-
-
 ---
-
+ 
 ## 🏗️ System Architecture <a id="system-architecture"></a>
 ```
 React (Frontend)
@@ -104,69 +91,61 @@ Express API (Backend)
         ↓
 MongoDB (Data Layer)
         ↓
-Stripe (Payment Gateway)
 Cloudinary (Image Storage)
-Clerk (Authentication)
+Clerk (Authentication + Webhooks)
 ```
-
-
+ 
 ---
-
+ 
 ## 📸 Screenshots
-
+ 
 ### Homepage
 ![Homepage](images/homepage.png)
-
+ 
 ### Room Details
 ![Room Details](images/room-details.png)
-
+ 
 ### Booking Page
 ![Booking Page](images/booking-page.png)
-
-### Stripe Checkout
-![Stripe Checkout](images/stripe-checkout.png)
-
+ 
 ### Dashboard
 ![Dashboard](images/dashboard.png)
-
-
-
+ 
 ---
-
+ 
 ## 🔑 Environment Variables
-
+ 
 ### Frontend (.env)
 ```env
 VITE_CLERK_PUBLISHABLE_KEY=
 VITE_BACKEND_URL=
-VITE_CURRENCY=$
+VITE_CURRENCY=₹
 ```
 ### Backend (.env)
 ```env
+# MongoDB
+MONGODB_URI=
+ 
 # Clerk keys
 CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
 CLERK_WEBHOOK_SECRET=
-
+ 
 # Cloudinary
 CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
-
+ 
 # NodeMailer SMTP - Brevo
-SENDER_EMAIL=''
-SMTP_USER=''
-SMTP_PASS=''
-
-# Stripe
-STRIPE_PUBLISHABLE_KEY=
-STRIPE_SECRET_KEY=
-STRIPE_WEBHOOK_SECRET=
+SENDER_EMAIL=
+SMTP_USER=
+SMTP_PASS=
 ```
-
-
+ 
+> ⚠️ **Deployment note:** Environment variables must be set directly in your hosting platform's dashboard (e.g., Vercel → Project → Settings → Environment Variables). A local `.env` file does **not** carry over to a deployed environment, and changes to env vars require a redeploy to take effect.
+ 
 ---
-
+ 
 ## 📦 Folder Structure
 ```
 QuickStay/
@@ -177,149 +156,155 @@ QuickStay/
 │   │   ├── context/
 │   │   │   └── AppContext.jsx
 │   │   ├── pages/
-│   │   ├── utils/
 │   │   └── App.jsx
 │
 └── server/                 # Node.js Backend
-    ├── configs/            # DB, Cloudinary, etc.
+    ├── configs/            # DB, Cloudinary, Nodemailer
     ├── controllers/
     ├── models/
     ├── routes/
     ├── middleware/
     └── server.js
 ```
-
-
+ 
 ---
-
+ 
 ## 🧪 API Endpoints
-
-### Auth
-| Method | Endpoint           | Description           |
-|--------|------------------|---------------------|
-| GET    | /api/auth/verify  | Verify user token    |
-
+ 
+### Webhooks
+| Method | Endpoint      | Description                          |
+|--------|---------------|---------------------------------------|
+| POST   | /api/clerk    | Clerk user sync (create/update/delete) |
+ 
+### User
+| Method | Endpoint                     | Description                     |
+|--------|-------------------------------|----------------------------------|
+| GET    | /api/user                     | Get current user role & data    |
+| POST   | /api/user/store-recent-search | Save a recently searched city   |
+ 
+### Hotels
+| Method | Endpoint      | Description           |
+|--------|---------------|------------------------|
+| POST   | /api/hotels   | Register a new hotel   |
+ 
 ### Rooms
-| Method | Endpoint           | Description        |
-|--------|------------------|------------------|
-| GET    | /api/rooms        | Get all rooms     |
-| POST   | /api/rooms/add    | Add new room      |
-| DELETE | /api/rooms/:id    | Delete room       |
-
+| Method | Endpoint                     | Description              |
+|--------|-------------------------------|---------------------------|
+| GET    | /api/rooms                    | Get all available rooms  |
+| POST   | /api/rooms                    | Add a new room (owner)   |
+| GET    | /api/rooms/owner              | Get rooms for current owner |
+| POST   | /api/rooms/toggle-availability | Toggle a room's availability |
+ 
 ### Bookings
-| Method | Endpoint                 | Description       |
-|--------|-------------------------|-----------------|
-| POST   | /api/bookings/create     | Create booking   |
-| GET    | /api/bookings/:userId    | Get user bookings|
-
-### Payments (Stripe)
-| Method | Endpoint                  | Description                 |
-|--------|--------------------------|-----------------------------|
-| POST   | /api/payments/checkout    | Create Stripe Checkout Session |
-
+| Method | Endpoint                       | Description                  |
+|--------|----------------------------------|-------------------------------|
+| POST   | /api/bookings/check-availability | Check room availability      |
+| POST   | /api/bookings/book               | Create a booking             |
+| GET    | /api/bookings/user               | Get bookings for current user |
+| GET    | /api/bookings/hotel              | Get bookings for owner's hotel |
+ 
 ---
-
-## 💳 Payment Integration Details
-
+ 
+## 💳 Payment Details
+ 
 **Currently Supported:**
-
-- ✔️ Stripe Checkout (fully implemented)  
-- ✔️ Handles:
-  - Payment success
-  - Payment failure
-  - Post-payment booking updates  
-
-
+ 
+- ✔️ **Pay At Hotel** — the default and only active payment method. Bookings are created immediately; payment is settled in person.
+**Planned:**
+ 
+- 🔜 **Razorpay integration** for online payments — see [Future Enhancements](#-future-enhancements--roadmap).
 ---
-
+ 
 ## 🛠️ Installation & Setup <a id="installation--setup"></a>
-
+ 
 ### Frontend
 ```bash
 cd client
 npm install
 npm run dev
 ```
-
+ 
 ### Backend
-```
+```bash
 cd server
 npm install
 npm run server
 ```
-
-
+ 
+### Webhook development (local only)
+Clerk needs a public URL to deliver webhook events to your local server. Use a tunneling tool such as `ngrok` or `cloudflared`:
+```bash
+ngrok http 3000
+```
+Then set the forwarding URL (`https://xxxx.ngrok-free.app/api/clerk`) as your webhook endpoint in the Clerk Dashboard.
+ 
 ---
-
+ 
 ## 📊 Dashboard Overview
 Dashboard includes:
 | Metric           | Description              |
 | ---------------- | ------------------------ |
 | Total Bookings   | Count of all bookings    |
 | Total Revenue    | Sum of all paid bookings |
-| Recent Bookings  | Latest 10 bookings       |
-| Room Management  | Add/Edit                 |
+| Recent Bookings  | Latest bookings, most recent first |
+| Room Management  | Add/toggle availability  |
 | Photo Management | Cloudinary upload        |
-#### Updates automatically after bookings & payments.
-
-
+ 
+Updates automatically after bookings are created.
+ 
 ---
-
+ 
 ## 🚀 Future Enhancements / Roadmap
-
+ 
 ### Backend
-
-- Razorpay integration
+ 
+- Razorpay integration for online payments
 - JWT refresh tokens
-- Admin/Owner roles
-
+- Additional admin/owner role granularity
 ### Frontend
-
+ 
 - Wishlist / Favorites
 - PWA support
 - Infinite scroll
-
 ### Dashboard
-
+ 
 - Revenue chart
 - Hotel comparison
 - Occupancy analytics
-
-
 ---
-
+ 
 ## 🤝 Contributing
 ```bash
-git clone https://github.com/abhijitradhakrishnan/QuickStay.git
+git clone https://github.com/udaycodes2/ProjectMern.git
 git checkout -b feature-name
 git commit -m "Added new feature"
 git push origin feature-name
 ```
 Open a Pull Request ✔
-
-
+ 
 ---
-
+ 
 ## 🐛 Troubleshooting
+ 
 ### Images not uploading
-
- ✔ Check Cloudinary keys
-
-### Stripe checkout failing
-
- ✔ Ensure webhook secret is correct
-
+✔ Check Cloudinary keys are set correctly in your environment variables
+ 
+### Room registration fails with a null/undefined user error
+✔ Confirm the Clerk `user.created` webhook is reaching `/api/clerk` successfully (check Clerk Dashboard → Webhooks → Logs) and that a matching document exists in the `users` collection in MongoDB
+ 
+### `Operation buffering timed out` / rooms not loading
+✔ Check MongoDB Atlas → Network Access allows `0.0.0.0/0`, the cluster isn't paused, and `MONGODB_URI` matches exactly between local and deployed environments
+ 
+### Booking fails with "Failed to create booking"
+✔ Check server logs for the underlying error — a common cause is invalid SMTP credentials for the booking confirmation email
+ 
 ### Dashboard showing 0 values
-
- ✔ Check if isPaid is updated properly
-
-
+✔ Check if `isPaid` / booking records are populating correctly in MongoDB
+ 
 ---
-
+ 
 <h2><a class="anchor" id="author--contact"></a>Author & Contact</h2>
-
-**Abhijit Peringadan**  
-MERN Stack Developer  
-📧 Email: peringadanabhijit@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/abhijit-radhakrishnan/)  
-🔗 [Portfolio](https://abhijit-portfolio-eight.vercel.app/)
+ 
+**Uday**  
+MERN Stack Developer
+ 
