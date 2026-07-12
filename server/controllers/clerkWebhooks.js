@@ -14,10 +14,15 @@ const clerkWebhooks = async ( req, res ) => {
         }
 
         //Verifying Headers
-        await whook.verify(JSON.stringify(req.body), headers)
+      
 
+        
+        // req.body is a raw Buffer now (thanks to express.raw)
+        await whook.verify(req.body, headers)
+        
         //Getting Data from request body
-        const {data, type} = req.body
+        // Only parse it into JSON *after* verification succeeds
+        const { data, type } = JSON.parse(req.body);
 
         //Switch cases for different events
         switch (type) {

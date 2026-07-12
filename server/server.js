@@ -25,6 +25,8 @@ app.use(cors()) // Enable Cross-Origin Resource Sharing
 // API to listen to Stripe Webhooks
 app.post('/api/stripe', express.raw({ type: "application/json" }), stripeWebhooks)
 
+app.post('/api/clerk', express.raw({ type: "application/json" }), clerkWebhooks)
+
 // Middleware 
 app.use(express.json())
 app.use(clerkMiddleware())
