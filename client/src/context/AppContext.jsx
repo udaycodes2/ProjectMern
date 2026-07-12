@@ -13,7 +13,7 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
 
-    const currency = import.meta.env.VITE_CURRENCY || "$";
+    const currency = import.meta.env.VITE_CURRENCY || "₹";
     const navigate = useNavigate();
     // Getting user from the clerk
     const {user} = useUser();

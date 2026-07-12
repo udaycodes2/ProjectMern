@@ -15,7 +15,7 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'Hotels', path: '/rooms' },
         { name: 'Experience', path: '/' },
-        { name: 'About', path: '/' },
+        { name: 'About', path: '/about' },
     ];
 
     const [isScrolled, setIsScrolled] = useState(false);
@@ -75,7 +75,7 @@ const Navbar = () => {
 
                 {/* Desktop Right */}
                 <div className="hidden md:flex items-center gap-4">
-                    <img src={assets.searchIcon} alt="search" className={`${isScrolled && 'invert'} h-7 transition-all duration-500`} />
+                    <img onClick={() => navigate('/rooms')}  src={assets.searchIcon} alt="search" className={`${isScrolled && 'invert'} h-7 transition-all duration-500`} />
 
                     {user ? 
                     (<UserButton>

@@ -9,7 +9,7 @@ const ExclusiveOffer = () => {
         <Title align='left' title='Exclusive Offers' subTitle='Take advantage of our limited-time offers and special packages to enhance your stay and create unforgettable memories.'/>
         <button className='group flex items-center gap-2 font-medium cursor-pointer max-md:mt-12'>
             View All Offers
-            <img src={assets.arrowIcon} alt="arrow-icon"
+            <img onClick={() => navigate('/rooms')}  src={assets.arrowIcon} alt="arrow-icon"
             className='group-hover:translate-x-1 transition-all' />
         </button>
       </div>
@@ -25,7 +25,7 @@ const ExclusiveOffer = () => {
                 </div>
                 <button className='flex items-center gap-2 font-medium cursor-pointer mt-4 mb-5'>
                     View Offers
-                    <img className='invert group-hover:translate-x-1 transition-all' src={assets.arrowIcon} alt="arrow-icon" />
+                    <img className='invert group-hover:translate-x-1 transition-all' onClick={() => navigate('/rooms')}  src={assets.arrowIcon} alt="arrow-icon" />
                 </button>
             </div>
         ))}

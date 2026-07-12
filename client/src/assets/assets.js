@@ -75,10 +75,11 @@ export const assets = {
 }
 
 export const cities = [
-    "Dubai",
-    "Singapore",
-    "New York",
-    "London",
+    "Mumbai",
+    "Panaji",
+    "Chennai",
+    "Kolkata",
+    "Bangalore"
 ];
 
 // Exclusive Offers Dummy Data
@@ -90,9 +91,10 @@ export const exclusiveOffers = [
 
 // Testimonials Dummy Data
 export const testimonials = [
-    { id: 1, name: "Emma Rodriguez", address: "Barcelona, Spain", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", rating: 5, review: "I've used many booking platforms before, but none compare to the personalized experience and attention to detail that QuickStay provides." },
-    { id: 2, name: "Liam Johnson", address: "New York, USA", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", rating: 4, review: "QuickStay exceeded my expectations. The booking process was seamless, and the hotels were absolutely top-notch. Highly recommended!" },
-    { id: 3, name: "Sophia Lee", address: "Seoul, South Korea", image: "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200", rating: 5, review: "Amazing service! I always find the best luxury accommodations through QuickStay. Their recommendations never disappoint!" }
+    { id: 1, name: "Varun Gupta", address: "Mumbai, India", image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200", rating: 5, review: "I've used many booking platforms before, but none compare to the personalized experience and attention to detail that QuickStay provides." },
+    
+    { id: 2, name: "Kriti Malhotra", address: "Chandigarh, India", image: "https://cdn.pixabay.com/photo/2024/05/11/10/07/female-8754474_1280.jpg", rating: 5, review: "Amazing service! I always find the best luxury accommodations through QuickStay. Their recommendations never disappoint!" },
+    { id: 3, name: "Yash Mehta", address: "Bangalore, India", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", rating: 4, review: "QuickStay exceeded my expectations. The booking process was seamless, and the hotels were absolutely top-notch. Highly recommended!" }
 ];
 
 // Facility Icon
@@ -115,15 +117,15 @@ export const roomCommonData = [
 // User Dummy Data
 export const userDummyData = {
     "_id": "user_2unqyL4diJFP1E3pIBnasc7w8hP",
-    "username": "Great Stack",
-    "email": "user.greatstack@gmail.com",
+    "username": "User 29",
+    "email": "user9827@gmail.com",
     "image": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzJ2N2c5YVpSSEFVYVUxbmVYZ2JkSVVuWnFzWSJ9",
     "role": "hotelOwner",
     "createdAt": "2025-03-25T09:29:16.367Z",
     "updatedAt": "2025-04-10T06:34:48.719Z",
     "__v": 1,
     "recentSearchedCities": [
-        "New York"
+        "Mumbai"
     ]
 }
 
