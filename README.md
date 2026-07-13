@@ -1,6 +1,6 @@
 # 🌐 QuickStay – Full Stack Hotel Booking Platform  
-QuickStay is a full-stack hotel booking system that enables users to explore rooms, check real-time availability, and complete bookings via **Pay At Hotel**, with online payments (Razorpay) planned as a future enhancement.
- 
+QuickStay is a production-ready full-stack hotel booking system that enables users to explore rooms, check real-time availability, complete bookings with **Stripe**, and manage reservations.
+
 Admins/Owners can add hotels, manage rooms, track bookings, view revenue analytics, and monitor customer activity.
  
 This project is ideal for:
@@ -33,9 +33,9 @@ This project is ideal for:
 ---
  
 ## Project Overview
- 
-**QuickStay** is a full-stack hotel booking web application built with the **MERN stack**, designed to simulate real-world booking platforms with role-based dashboards, webhook-driven data sync, and a scalable architecture.
- 
+
+**QuickStay** is a full-stack hotel booking web application built with the **MERN stack**, designed to simulate real-world booking platforms with secure payments, role-based dashboards, and scalable architecture.
+
 ---
  
 ## 🚀 Features
@@ -259,7 +259,7 @@ Updates automatically after bookings are created.
  
 ## 🤝 Contributing
 ```bash
-git clone https://github.com/udaycodes2/ProjectMern.git
+git clone https://github.com/abhijitradhakrishnan/QuickStay.git
 git checkout -b feature-name
 git commit -m "Added new feature"
 git push origin feature-name
