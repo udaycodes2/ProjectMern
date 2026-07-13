@@ -9,7 +9,7 @@ const Testimonial = () => {
       
       <Title 
         title='What Our Guests Say' 
-        subTitle='Discover why discerning travelers consistently choose QuickStay for their exclusive and luxurious accommodations around the world.'
+        subTitle='Discover why discerning travelers consistently choose STAYO for their exclusive and luxurious accommodations around the world.'
       />
 
       {/* Grid Layout */}

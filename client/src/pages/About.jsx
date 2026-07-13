@@ -6,14 +6,14 @@ const About = () => {
     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>
 
       <Title 
-        title='About QuickStay' 
+        title='About STAYO' 
         subTitle='Making travel simple, comfortable, and memorable — one stay at a time.' 
         align='left'
       />
 
       <div className='mt-10 max-w-3xl text-gray-600 space-y-6'>
         <p>
-          QuickStay is a hotel booking platform built to make finding and reserving 
+          STAYO is a hotel booking platform built to make finding and reserving 
           the perfect place to stay effortless. Whether you're planning a weekend 
           getaway or a longer trip, we connect you with a curated selection of 
           hotels, resorts, and villas across top destinations.
