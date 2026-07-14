@@ -76,7 +76,9 @@ export const assets = {
 
 export const cities = [
     "Mumbai",
+    "Delhi",
     "Panaji",
+    "Shimla",
     "Chennai",
     "Kolkata",
     "Bangalore"
