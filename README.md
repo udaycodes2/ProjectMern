@@ -3,9 +3,7 @@ STAYO is a full-stack hotel booking system that enables users to explore rooms, 
  
 Admins/Owners can add hotels, manage rooms, track bookings, view revenue analytics, and monitor customer activity.
  
-This project is ideal for:
- 
-- Portfolio demonstration
+
 - Real-world **MERN** application learning
 - Authentication + Webhooks + Cloud Storage example
 - Scalable project structure reference
@@ -48,7 +46,6 @@ This project is ideal for:
 - 📅 **Real-time room availability check**
 - 🛏️ **Instant booking system (Pay At Hotel)**
 - 📜 **Booking history** with statuses & details
-- 📧 **Email confirmation** on successful booking (best-effort — booking still succeeds even if email delivery fails)
 - 🖼 **Cloudinary-based image delivery**
 - 🚫 **Auto-hide deleted rooms from booking history**
 ---
